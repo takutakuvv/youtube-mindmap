@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   verification: {
-    google: 'ca-pub-2913908713051662',
+    google: '8rdv6-oBxoLXhDcxQa41xRmsPNIYtLRMosa_A3xjWdY',
   },
   title: "YouTube コメント マインドマップ",
   description: "YouTubeのURLを入力するだけでコメントをマインドマップに変換",
