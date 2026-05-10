@@ -81,14 +81,12 @@ export default function Home() {
       <header className="px-6 py-5 border-b border-slate-700/50">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* 吹き出し＋再生ボタンのオリジナルアイコン */}
             <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* 吹き出し本体 */}
               <rect x="2" y="2" width="36" height="28" rx="6" fill="#EF4444"/>
-              {/* 吹き出しの尻尾 */}
-              <polygon points="10,30 18,30 10,38" fill="#EF4444"/>
-              {/* 再生ボタン（三角形） */}
-              <polygon points="15,12 15,22 27,17" fill="white"/>
+              <polygon points="8,30 18,30 9,39" fill="#EF4444"/>
+              <rect x="9" y="10" width="22" height="3" rx="1.5" fill="white"/>
+              <rect x="9" y="16" width="22" height="3" rx="1.5" fill="white"/>
+              <rect x="9" y="22" width="16" height="3" rx="1.5" fill="white"/>
             </svg>
             <div>
               <h1 className="text-base font-bold leading-tight">YouTube動画の大量コメントを、一瞬で見える化</h1>
