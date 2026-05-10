@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     google: '8rdv6-oBxoLXhDcxQa41xRmsPNIYtLRMosa_A3xjWdY',
   },
   title: "YouTube コメント マインドマップ",
-  description: "YouTubeのURLを入力するだけでコメントをマインドマップに変換",
+  description: "YouTubeのURLを貼り付けるだけで、コメントを自動分析してマインドマップを作成します。ユーチューブのコメント欄を一瞬で見える化。",
 };
 
 export default function RootLayout({
