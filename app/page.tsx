@@ -188,6 +188,73 @@ export default function Home() {
                   </div>
                 </div>
               )}
+
+              {step === 'idle' && (
+                <div className="mt-16 space-y-10 text-left">
+                  {/* このツールについて */}
+                  <section>
+                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">このツールについて</h2>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      YouTubeのコメント欄には、動画への感想・質問・意見・批評など、多様な声が集まります。しかし数百・数千件のコメントをすべて読むのは現実的ではありません。
+                      このツールはAIが最大100件のコメントを自動で分析・分類し、マインドマップとして視覚的に整理します。視聴者の声の全体像を一瞬で把握できます。
+                    </p>
+                  </section>
+
+                  {/* 使い方 */}
+                  <section>
+                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">使い方</h2>
+                    <ol className="space-y-3">
+                      {[
+                        'YouTubeで気になる動画を開く',
+                        'ブラウザのアドレスバーからURLをコピーする',
+                        '上の入力欄にURLを貼り付けて「分析・生成」を押す',
+                        'AIがコメントを自動分析し、マインドマップを表示する',
+                      ].map((step, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-slate-400">
+                          <span className="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+
+                  {/* 活用例 */}
+                  <section>
+                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">活用例</h2>
+                    <ul className="space-y-2">
+                      {[
+                        '商品レビュー動画のコメントから購入者の評判を把握する',
+                        'ニュース・解説動画のコメントから視聴者の関心事を分析する',
+                        '自分の動画のコメントを整理してファンの声を可視化する',
+                        '競合チャンネルの反応を調査するマーケティングリサーチ',
+                      ].map((ex, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
+                          <span className="text-red-400 mt-0.5">›</span>
+                          {ex}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  {/* よくある質問 */}
+                  <section>
+                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">よくある質問</h2>
+                    <div className="space-y-4">
+                      {[
+                        { q: '無料で使えますか？', a: 'はい、完全無料でご利用いただけます。' },
+                        { q: '何件のコメントを分析できますか？', a: '最大100件のコメントを取得・分析します。' },
+                        { q: 'どんな動画でも使えますか？', a: 'コメント欄が公開されているYouTube動画であれば利用できます。コメントが無効になっている動画は分析できません。' },
+                        { q: 'マインドマップはどう操作しますか？', a: 'ドラッグで移動、スクロールでズーム、ノードをクリックで折りたたみができます。' },
+                      ].map(({ q, a }, i) => (
+                        <div key={i} className="bg-slate-800/50 rounded-xl p-4">
+                          <p className="text-sm font-semibold text-white mb-1">Q. {q}</p>
+                          <p className="text-sm text-slate-400">A. {a}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              )}
             </div>
           </div>
         )}
