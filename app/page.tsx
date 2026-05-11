@@ -238,7 +238,7 @@ export default function Home() {
 
                   {/* よくある質問 */}
                   <section>
-                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">よくある質問</h2>
+                    <h2 className="text-lg font-bold text-white mb-3 border-b border-slate-700 pb-2">もっと詳しく知る</h2>
                     <div className="space-y-4">
                       {[
                         { q: '無料で使えますか？', a: 'はい、完全無料でご利用いただけます。' },
