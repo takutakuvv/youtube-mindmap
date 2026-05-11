@@ -21,6 +21,7 @@ export default function Home() {
   const [thumbnail, setThumbnail] = useState('')
   const [commentCount, setCommentCount] = useState(0)
   const [markdown, setMarkdown] = useState('')
+  const [topComments, setTopComments] = useState<Comment[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
 
   async function handleSubmit(e: React.FormEvent) {
@@ -44,6 +45,8 @@ export default function Home() {
       setVideoTitle(videoTitle)
       setThumbnail(thumbnail)
       setCommentCount(comments.length)
+      const sorted = [...comments].sort((a: Comment, b: Comment) => b.likes - a.likes)
+      setTopComments(sorted.slice(0, 3))
 
       setStep('generating-mindmap')
 
@@ -71,6 +74,7 @@ export default function Home() {
     setVideoTitle('')
     setThumbnail('')
     setCommentCount(0)
+    setTopComments([])
     setTimeout(() => inputRef.current?.focus(), 100)
   }
 
@@ -271,6 +275,25 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {topComments.length > 0 && (
+              <div className="px-6 py-4 bg-slate-800/80 border-b border-slate-700/50">
+                <div className="max-w-screen-xl mx-auto">
+                  <p className="text-xs font-bold text-slate-400 mb-3">👍 いいね数 TOP3</p>
+                  <div className="space-y-2">
+                    {topComments.map((c, i) => (
+                      <div key={i} className="flex items-start gap-3 bg-slate-700/40 rounded-xl px-4 py-3">
+                        <span className="text-base font-bold text-red-400 flex-shrink-0 w-5">{i + 1}</span>
+                        <p className="text-sm text-slate-200 leading-relaxed flex-1 line-clamp-2">{c.text}</p>
+                        <span className="text-xs text-slate-400 flex-shrink-0 flex items-center gap-1">
+                          👍 {c.likes.toLocaleString()}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="bg-white" style={{ height: 'calc(100dvh - 120px)', minHeight: '400px' }}>
               <MindMap markdown={markdown} />
