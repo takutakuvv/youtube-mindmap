@@ -93,7 +93,10 @@ export default function Home() {
               <rect x="9" y="22" width="16" height="3" rx="1.5" fill="white"/>
             </svg>
             <div>
-              <h1 className="text-base font-bold leading-tight">YouTube動画の大量コメントを、一瞬で見える化</h1>
+              <h1 className="text-sm sm:text-base font-bold leading-tight">
+                <span className="sm:hidden">コメントを一瞬で見える化</span>
+                <span className="hidden sm:inline">YouTube動画の大量コメントを、一瞬で見える化</span>
+              </h1>
             </div>
           </div>
           {step === 'done' && (
@@ -295,7 +298,7 @@ export default function Home() {
               </div>
             )}
 
-            <div className="bg-white" style={{ height: 'calc(100dvh - 120px)', minHeight: '400px' }}>
+            <div className="bg-white flex-1 min-h-0" style={{ minHeight: '300px' }}>
               <MindMap markdown={markdown} />
             </div>
 
