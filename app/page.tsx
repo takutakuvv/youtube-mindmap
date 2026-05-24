@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Script from 'next/script'
 
 const MindMap = dynamic(() => import('@/components/MindMap'), { ssr: false })
 
@@ -163,6 +164,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col">
+      {(step === 'idle' || step === 'done') && (
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913908713051662"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+      )}
       <header className="px-6 py-5 border-b border-slate-700/50">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -414,6 +422,12 @@ export default function Home() {
           </div>
         )}
       </main>
+
+      <footer className="px-6 py-3 border-t border-slate-800 text-center">
+        <a href="/privacy" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">
+          プライバシーポリシー
+        </a>
+      </footer>
 
       {/* 履歴パネル */}
       {showHistory && (

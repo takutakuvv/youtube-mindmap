@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   verification: {
     google: '8rdv6-oBxoLXhDcxQa41xRmsPNIYtLRMosa_A3xjWdY',
   },
-  title: "YouTube コメント マインドマップ",
-  description: "YouTubeのURLを貼り付けるだけで、コメントを自動分析してマインドマップを作成します。ユーチューブのコメント欄を一瞬で見える化。",
+  title: "YouTube コメント マインドマップ | コメントをAIで自動分析・可視化",
+  description: "YouTubeのURLを貼り付けるだけで、最大100件のコメントをAIが自動分析してマインドマップを作成します。視聴者の声を一瞬で見える化する無料ツールです。",
 };
 
 export default function RootLayout({
@@ -27,16 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913908713051662"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
